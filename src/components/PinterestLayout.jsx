@@ -4,24 +4,24 @@ import PinCard from './PinCard';
 const PinterestLayout = () => {
   return (
     <div style={_stylesLayout.pin_container}>
-      <PinCard size='small' image='https://picsum.photos//299/450'/>
-      <PinCard size='medium' image='https://picsum.photos//301/450'/>
-      <PinCard size='large' image='https://picsum.photos//298/450'/>
-      <PinCard size='small' image='https://picsum.photos//280/450'/>
-      <PinCard size='medium' image='https://picsum.photos//330/450'/>
-      <PinCard size='large' image='https://picsum.photos//399/450'/>
-      <PinCard size='small' image='https://picsum.photos//297/450'/>
-      <PinCard size='medium' image='https://picsum.photos//455/450'/>
-      <PinCard size='large' image='https://picsum.photos//251/450'/>
-      <PinCard size='small' image='https://picsum.photos//211/450'/>
-      <PinCard size='medium' image='https://picsum.photos//780/450'/>
-      <PinCard size='large' image='https://picsum.photos//296/450'/>
-      <PinCard size='small' image='https://picsum.photos//555/450'/>
-      <PinCard size='medium' image='https://picsum.photos//666/450'/>
-      <PinCard size='large' image='https://picsum.photos//111/450'/>
-      <PinCard size='small' image='https://picsum.photos//999/450'/>
-      <PinCard size='medium' image='https://picsum.photos//632/450'/>
-      <PinCard size='large' image='https://picsum.photos//588/450'/>
+      <PinCard size='small' tam='small_icon' image='https://picsum.photos//299/450'/>
+      <PinCard size='medium' tam='medium_icon' image='https://picsum.photos//301/450'/>
+      <PinCard size='large' tam='large_icon' image='https://picsum.photos//298/450'/>
+      <PinCard size='small' tam='small_icon' image='https://picsum.photos//280/450'/>
+      <PinCard size='medium' tam='medium_icon' image='https://picsum.photos//330/450'/>
+      <PinCard size='large' tam='large_icon' image='https://picsum.photos//399/450'/>
+      <PinCard size='small' tam='small_icon' image='https://picsum.photos//297/450'/>
+      <PinCard size='medium' tam='medium_icon' image='https://picsum.photos//455/450'/>
+      <PinCard size='large' tam='large_icon' image='https://picsum.photos//251/450'/>
+      <PinCard size='small' tam='small_icon' image='https://picsum.photos//211/450'/>
+      <PinCard size='medium' tam='medium_icon' image='https://picsum.photos//780/450'/>
+      <PinCard size='large' tam='large_icon' image='https://picsum.photos//296/450'/>
+      <PinCard size='small' tam='small_icon' image='https://picsum.photos//555/450'/>
+      <PinCard size='medium' tam='medium_icon' image='https://picsum.photos//666/450'/>
+      <PinCard size='large' tam='large_icon' image='https://picsum.photos//111/450'/>
+      <PinCard size='small' tam='small_icon' image='https://picsum.photos//999/450'/>
+      <PinCard size='medium' tam='medium_icon' image='https://picsum.photos//632/450'/>
+      <PinCard size='large' tam='large_icon' image='https://picsum.photos//588/450'/>
     </div>
   );
 };

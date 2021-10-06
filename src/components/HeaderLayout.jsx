@@ -80,7 +80,6 @@ const _stylesHeader = {
     paddingLeft: '16px',
     paddingRight: '16px',
     paddingBottom: '4px',
-    paddingTop: '10px',
     width: '100%',
     height: '80px',
     a:{

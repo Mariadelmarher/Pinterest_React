@@ -22,14 +22,14 @@ body {
 }
 
 .pinterest-margen{
-  margin-left: 10px !important;
+  margin-left: 5px !important;
 }
 
 .despliegue-btn{
   padding: 2.5px !important;
   height: 20px !important;
   width: 20px !important;
-  margin-right: 15px !important;
+  margin-right: 32px !important;
 }
 
 .despliegue{
@@ -37,10 +37,22 @@ body {
 }
 
 .imagen:hover{
-  filter: brightness(50%) !important;
+  filter: brightness(60%) !important;
   cursor: zoom-in !important;
 }
 
 .tablero{
   margin-top: 10px;
+}
+
+.icon{
+  margin-top: 1px !important;
+}
+
+.icon-bottom:hover{
+  background-color: #e2e2e2 !important;
+}
+
+.btn-save:hover{
+  background-color: #ad081b !important;
 }
