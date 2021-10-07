@@ -1,33 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const PinCard = (props) => {
+  const [hover, setHover] = useState(false);
   return (
-    <div style={{ ..._stylesPinCard.pin_card, ..._stylesPinCard[props.size]}}>
-      <div style={{..._stylesPinCard.pin_card_button, ..._stylesPinCard.pin_card_button_board_flecha}}>
-      <p className="btn-tablero" href="#Tablero">Tablero</p>
-      <svg className="tablero" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 25 40">
-              <path fill="#fff"
-                  d="M12 19.5.66 8.29c-.88-.86-.88-2.27 0-3.14.88-.87 2.3-.87 3.18 0L12 13.21l8.16-8.06c.88-.87 2.3-.87 3.18 0 .88.87.88 2.28 0 3.14L12 19.5z">
-              </path>
-          </svg>
-      </div>
-      <div className="btn-save" style={{..._stylesPinCard.pin_card_button, ..._stylesPinCard.pin_card_button_save}}>
-        Guardar
-      </div>
-      <div className="icons-bottom-card" style={{..._stylesPinCard.pin_card_button, ..._stylesPinCard.icons_bottom_position, ..._stylesPinCard[props.tam]}}>
-        <div className="icon-bottom" style={{..._stylesPinCard.icons_bottom_card}}>
-          <svg className="icon" fill="currentColor" width="24" height="24" viewBox="0 0 25 30">
-            <path d="M4 19h16v-7h2v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-8h2v7zM14 9v6h-4V9H5l7-7 7 7h-5z"/>
-          </svg>
+    <div onMouseEnter={() => setHover(true)} onMouseLeave= {() =>    setHover(false)}
+    style={ { ..._stylesPinCard.pin_card, ..._stylesPinCard[props.size] }}>
+      {hover&&
+        <div className= "container-pin-card" style={{ ..._stylesPinCard.container, ..._stylesPinCard[props.size]}}>
+          <div style={{..._stylesPinCard.pin_card_button, ..._stylesPinCard.pin_card_button_board_flecha}}>
+          <p className="btn-tablero" href="#Tablero">Tablero</p>
+          <svg className="tablero" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 25 40">
+                  <path fill="#fff"
+                      d="M12 19.5.66 8.29c-.88-.86-.88-2.27 0-3.14.88-.87 2.3-.87 3.18 0L12 13.21l8.16-8.06c.88-.87 2.3-.87 3.18 0 .88.87.88 2.28 0 3.14L12 19.5z">
+                  </path>
+              </svg>
+          </div>
+
+          <div className="btn-save" style={{..._stylesPinCard.pin_card_button, ..._stylesPinCard.pin_card_button_save}}>
+            Guardar
+          </div>
+
+          <div className="icons-bottom-card" style={{..._stylesPinCard.pin_card_button, ..._stylesPinCard.icons_bottom_position, ..._stylesPinCard[props.tam]}}>
+            <div className="icon-bottom" style={{..._stylesPinCard.icons_bottom_card}}>
+              <svg className="icon" fill="currentColor" width="24" height="24" viewBox="0 0 25 30">
+                <path d="M4 19h16v-7h2v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-8h2v7zM14 9v6h-4V9H5l7-7 7 7h-5z"/>
+              </svg>
+            </div>
+            <div className="icon-bottom" style={{..._stylesPinCard.icons_bottom_card}}>
+              <svg className="icon" fill="currentColor" width="24" height="24" viewBox="0 0 25 26">
+                <path d="M5 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm14 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-7 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+            </div>
+          </div>
         </div>
-        <div className="icon-bottom" style={{..._stylesPinCard.icons_bottom_card}}>
-          <svg className="icon" fill="currentColor" width="24" height="24" viewBox="0 0 25 26">
-            <path d="M5 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm14 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-7 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-          </svg>
-        </div>
-      </div>
-      <img className='imagen' src={props.image} alt='img' width='100%' style={{..._stylesPinCard.pin_card.img}} />
+      }
+      <img className={ `${ hover ? "imgenHover" : ""}` } src={props.image} alt='img' width='100%' style={{..._stylesPinCard.pin_card.img}} />
     </div>
   );
 };
@@ -37,12 +45,15 @@ const _stylesPinCard = {
     margin: '15px 10px',
     padding: 0,
     borderRadius: '16px',
-    backgroundColor: 'red',
+    backgroundColor: 'black',
     display: 'flex',
     cursor: 'pointer',
     img:{
       borderRadius:'16px',
     }
+  },
+  container:{
+    position:'relative'
   },
   small: {
     gridRowEnd: 'span 26',
