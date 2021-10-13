@@ -35,7 +35,7 @@ const PinCard = (props) => {
           </div>
         </div>
       }
-      <img className={ `${ hover ? "imgenHover" : ""}` } src={props.image} alt='img' width='100%' style={{..._stylesPinCard.pin_card.img}} />
+      <img className={ `${ hover ? "imagenHover" : ""}` } src={props.image} alt='img' width='100%' style={{..._stylesPinCard.pin_card.img}} />
     </div>
   );
 };

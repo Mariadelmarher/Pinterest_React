@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: #fff;
+  
 }
 
 .img-profile{
@@ -36,8 +37,8 @@ body {
   margin-top: 4px !important;
 }
 
-.imgenHover{
-  opacity: 0.7;
+.imagenHover{
+  opacity: 0.5;
   cursor: zoom-in !important;
 }
 
@@ -56,3 +57,4 @@ body {
 .btn-save:hover{
   background-color: #ad081b !important;
 }
+

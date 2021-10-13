@@ -1,9 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const HeaderLayout = () => {
+  const [mediaqueryheader, setmediaqueryheader] = useState(false);
+    window.addEventListener("resize", function(){
+      if(window.screen.width <= 400){
+        setmediaqueryheader(true);
+      }
+      else{
+        setmediaqueryheader(false);
+      }
+  });
+
+  let scrollold = window.scrollY;
+    window.onscroll = () => {
+        //movil-------------
+        if(scrollold < window.scrollY){
+          document.getElementById("headerMobile").style.top = '0px';
+          document.getElementById("headerMobile").style.opacity = '1';
+          scrollold = window.scrollY;
+        }
+        if(scrollold > window.scrollY){
+            document.getElementById("headerMobile").style.top = '-75px';
+            document.getElementById("headerMobile").style.opacity = '0';
+          scrollold = window.scrollY;
+        }
+    };
+
   return (
     <div className='Header' style= {{..._stylesHeader.header}}>
-      <div className='content-header' style={{..._stylesHeader.content}}>
+      
+      <div className='content-header' style={{..._stylesHeader[`${mediaqueryheader || window.screen.width <= 400 ? "contentnone":"content"}`]}}>
         <div className='btn pinterest-margen' style={{..._stylesHeader.icono}}>
           <svg className="pinterest" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
@@ -53,13 +79,21 @@ const HeaderLayout = () => {
           </svg>
         </div>
       </div>
+    
+      <div id='headerMobile' style={{..._stylesHeader[`${mediaqueryheader || window.screen.width <= 400 ? "headerMobile":"headerMobilenone"}`]}}>
+        <a className="btn" href="#parati" style={{..._stylesHeader.headerMobile.a}}>para ti</a>
+        <a className="btn" href="#Hoy" style={{..._stylesHeader.headerMobile.a}}>Hoy</a>
+        <a className="btn" href="#ilustracion" style={{..._stylesHeader.headerMobile.a}}>ilustracion</a>
+        <a className="btn" href="#recetas" style={{..._stylesHeader.headerMobile.a}}>Recetas de</a>
+      </div>
+    
     </div>
   );
 };
 
 const _stylesHeader = {
   header: {
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
     height: '80px',
     width: '100%'
   },
@@ -97,6 +131,9 @@ const _stylesHeader = {
     position:'fixed',
     zIndex:'1000'
   },
+  contentnone:{
+    display: 'none',
+  },
   searchBar:{
     backgroundColor:'#efefef',
     borderRadius: '24px', 
@@ -120,7 +157,39 @@ const _stylesHeader = {
     marginLeft: '8px',
     backgroundColor:'#0000',
     fontSize:'16px'
-  }
+  },
+  headerMobile:{
+    backgroundColor: '#fff',
+    padding: '0',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: '16px',
+    paddingBottom: '4px',
+    width: '100%',
+    height: '70px',
+    position:'fixed',
+    zIndex:'999',
+    transition: 'all 1s ease',
+    top:'0px',
+    boxShadow: '0px 0px 5px 0px #00000020',
+    a:{
+      float: 'left',
+      color: 'black',
+      textAlign: 'center',
+      padding: '14px 14px',
+      textDecoration: 'none',
+      fontSize: '17px',
+      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif", 
+      fontWeight: 'bold',
+      borderRadius:'24px',
+      whiteSpace: 'nowrap',
+
+    },
+  },
+  headerMobilenone:{
+    display: 'none',
+  },
 };
 
 export default HeaderLayout;
